@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Finances\Finances.Models\Finances.Models.csproj" />
+    <ProjectReference Include="..\..\Processing\Processing.Models\Processing.Models.csproj" />
+    <ProjectReference Include="..\..\Utils\Utils.csproj" />
+    <ProjectReference Include="..\..\Warehouses\Warehouses.Models\Warehouses.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
