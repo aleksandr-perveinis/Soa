@@ -26,8 +26,7 @@ namespace Warehouses.App
 
             services.AddSingleton(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
             {
-                var host = Utils.HostFactory.CreateHost(cfg);
-
+                Utils.HostFactory.CreateHost(cfg);
                 cfg.ReceiveEndpoint(config.QueueName, e => { e.ConfigureConsumer(provider, consumers); });
             }));
 

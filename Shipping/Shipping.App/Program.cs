@@ -25,6 +25,7 @@ namespace Shipping.App
 
             services.AddSingleton(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
             {
+                Utils.HostFactory.CreateHost(cfg);
                 cfg.ReceiveEndpoint(config.QueueName, e => { e.ConfigureConsumer(provider, consumers); });
             }));
 
